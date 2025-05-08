@@ -1,0 +1,5 @@
+Blockchain Technology
+Blockchain is a decentralized, distributed ledger technology that records transactions across multiple computers in such a way that the registered transactions cannot be altered retroactively. This ensures security, transparency, and immutability in digital transactions. Blockchain is best known as the underlying technology behind cryptocurrencies such as Bitcoin and Ethereum, but its applications extend to finance, supply chain management, healthcare, and other industries.
+
+History
+The concept of blockchain was first introduced in 1991 by Stuart Haber and W. Scott Stornetta, who envisioned a cryptographically secured chain of blocks to prevent document tampering. In 2008, an individual or group using the pseudonym Satoshi Nakamoto introduced Bitcoin, the first practical application of blockchain technology. Bitcoin's blockchain served as a decentralized public ledger for recording cryptocurrency transactions, revolutionizing digital trust mechanisms.

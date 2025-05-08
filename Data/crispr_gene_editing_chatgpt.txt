@@ -1,0 +1,14 @@
+Mechanism of Action
+CRISPR gene editing relies on the Cas (CRISPR-associated) proteins, primarily Cas9, to cut DNA at specific locations. The process involves:
+
+Guide RNA (gRNA): A custom-designed RNA molecule directs Cas9 to the target DNA sequence.
+DNA Cleavage: The Cas9 enzyme acts as molecular scissors, cutting the DNA at the desired site.
+DNA Repair: Cells attempt to repair the cut using one of two mechanisms:
+Non-Homologous End Joining (NHEJ): Often introduces small mutations that can disrupt a gene.
+Homology-Directed Repair (HDR): Uses a template to precisely insert or modify genetic sequences.
+
+CRISPR Gene Editing
+CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) is a revolutionary gene-editing technology that allows scientists to precisely modify DNA in living organisms. Adapted from a natural defense mechanism found in bacteria, CRISPR enables targeted genetic modifications with high efficiency, making it one of the most powerful tools in modern biotechnology.
+
+History and Development
+CRISPR technology is based on a bacterial immune system that defends against viral infections. In 2012, Jennifer Doudna and Emmanuelle Charpentier demonstrated how the CRISPR-Cas9 system could be repurposed for gene editing, earning them the Nobel Prize in Chemistry in 2020. Since then, CRISPR has transformed genetic research and medicine.
