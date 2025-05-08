@@ -1,0 +1,18 @@
+CRISPR Gene Editing
+CRISPR gene editing is a genetic engineering technique in molecular biology by which the genomes of living organisms may be modified. It is based on a simplified version of the bacterial CRISPR-Cas9 antiviral defense system. By delivering the Cas9 enzyme and a guide RNA (gRNA) into a cell, the organism's genome can be cut at any desired location, allowing existing genes to be removed and/or new ones added.
+
+Mechanism:
+
+The CRISPR-Cas9 system consists of two key components:
+
+Cas9 (CRISPR associated protein 9): An enzyme that acts as "molecular scissors," cutting double-stranded DNA.
+Guide RNA (gRNA): A small RNA molecule that guides Cas9 to the specific target DNA sequence. The gRNA contains a "spacer" sequence that is complementary to the target DNA, allowing for precise targeting.
+The process of CRISPR-Cas9 gene editing involves the following steps:
+
+gRNA Design: A gRNA is designed to match the specific DNA sequence that needs to be edited.
+Delivery: The Cas9 protein and gRNA are delivered into the target cell. This can be achieved using various methods, such as viral vectors or electroporation.
+Targeting: The gRNA guides the Cas9 protein to the target DNA sequence.
+Cutting: Cas9 cuts both strands of the DNA double helix at the target site.
+Repair: The cell's natural DNA repair mechanisms take over.
+Non-homologous end joining (NHEJ): This repair pathway often introduces small insertions or deletions (indels) at the cut site, which can disrupt gene function ("gene knockout").
+Homology-directed repair (HDR): If a DNA template is provided, the cell can use HDR to repair the cut by inserting a specific DNA sequence, allowing for precise gene editing ("gene knock-in").

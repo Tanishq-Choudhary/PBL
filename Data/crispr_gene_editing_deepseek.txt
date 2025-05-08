@@ -1,0 +1,23 @@
+CRISPR Gene Editing
+
+CRISPR gene editing is a revolutionary biotechnology that allows scientists to precisely modify the DNA of living organisms. CRISPR, which stands for Clustered Regularly Interspaced Short Palindromic Repeats, is a natural defense mechanism found in bacteria and archaea. It has been adapted into a powerful tool for genetic engineering, enabling targeted changes to genomes with unprecedented accuracy, efficiency, and versatility. CRISPR-based technologies have transformative potential in medicine, agriculture, biotechnology, and basic scientific research.
+
+Overview
+CRISPR gene editing relies on the CRISPR-associated protein 9 (Cas9) enzyme, which acts as molecular scissors to cut DNA at specific locations. Guided by a small piece of RNA called guide RNA (gRNA), the Cas9 enzyme can be directed to any desired sequence in the genome. Once the DNA is cut, the cell's natural repair mechanisms can be harnessed to introduce changes, such as inserting, deleting, or modifying genetic material.
+
+The CRISPR-Cas9 system was first adapted for gene editing in 2012 by researchers Jennifer Doudna and Emmanuelle Charpentier, who were awarded the 2020 Nobel Prize in Chemistry for their groundbreaking work. Since then, CRISPR has become one of the most widely used tools in genetic research and biotechnology.
+
+How CRISPR Works
+Guide RNA Design: Scientists design a short RNA sequence (gRNA) that matches the target DNA sequence they want to edit.
+
+Cas9-gRNA Complex Formation: The gRNA binds to the Cas9 enzyme, forming a complex.
+
+DNA Targeting: The Cas9-gRNA complex scans the genome and binds to the target DNA sequence.
+
+DNA Cleavage: Cas9 cuts both strands of the DNA at the target site.
+
+DNA Repair: The cell repairs the cut using one of two mechanisms:
+
+Non-Homologous End Joining (NHEJ): Often introduces small insertions or deletions, disrupting the gene.
+
+Homology-Directed Repair (HDR): Uses a donor DNA template to introduce precise changes or insert new genetic material.
