@@ -1,10 +1,7 @@
 # PBL
 PBL for 23FE10CSE00664 - Tanishq Choudhary - Under Dr. Ashish Kumar - Section J 
 
-Contains evaluation PPT & Poster - Recommend poster for quick understanding. 
+Contains all datasets, directories, pbl-wise evolutions, scripts, results, papers, ppts. 
 
-Contains dataset I am manually creating. 
-
-Contains analysis, comparative analysis in excel, individual reports for trends and images of graphs for use in report. 
-
-Contains Python script for generating all of the above.
+Phase 1: PBL 3 - Paper on statistical techniques. 
+Phase 2: PBL 4 - Paper expansion with increased dataset sizes, features, methods and methods of analysis, visit https://tanishq-choudhary.github.io/PBL/ for complete guide. 
