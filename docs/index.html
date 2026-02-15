@@ -11,10 +11,9 @@
 
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-    <script src="./script.js" defer></script>
 </head>
 
-<body onload="startTimer()">
+<body>
 
     <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
         <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
@@ -44,30 +43,44 @@
             <a href="#analysis" class="hover:text-blue-400 transition">Analysis</a>
         </div>
 
-        <button id="navToggle" class="md:hidden text-slate-200 text-xl px-3 py-2 rounded-xl hover:bg-white/5 transition" aria-label="Open menu">
+        <button id="navToggle" type="button" class="md:hidden text-slate-200 text-2xl px-3 py-2 rounded-xl hover:bg-white/10 transition-all active:scale-95" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </button>
+    </nav>
 
-        <div id="mobileMenu" class="mobile-menu md:hidden">
-            <div class="glass rounded-3xl p-4 border border-slate-700/50">
-                <div class="flex items-center justify-between mb-2">
-                    <div class="text-xs uppercase tracking-widest text-slate-400 font-bold">Navigation</div>
-                    <button id="navClose" class="text-slate-200 text-lg px-2 py-1 rounded-lg hover:bg-white/5 transition" aria-label="Close menu">
-                        <i class="fas fa-xmark"></i>
-                    </button>
-                </div>
-                <div class="flex flex-col gap-3 text-[12px] uppercase tracking-widest font-bold opacity-90">
-                    <a href="#overview" class="hover:text-blue-400 transition mobile-link">Overview</a>
-                    <a href="#problem" class="hover:text-blue-400 transition mobile-link">Problem</a>
-                    <a href="#evolution" class="hover:text-blue-400 transition mobile-link">Evolution</a>
-                    <a href="#methodology" class="hover:text-blue-400 transition mobile-link">Methodology</a>
-                    <a href="#results" class="hover:text-blue-400 transition mobile-link">Results</a>
-                    <a href="#analysis" class="hover:text-blue-400 transition mobile-link">Analysis</a>
-                    <a href="#team" class="hover:text-blue-400 transition mobile-link">Team</a>
-                </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden" aria-hidden="true">
+        <div class="mobile-menu-content">
+            <div class="flex items-center justify-between mb-6">
+                <div class="text-xs uppercase tracking-widest text-slate-400 font-bold">Navigation</div>
+                <button id="navClose" type="button" class="text-slate-200 text-2xl px-3 py-2 rounded-xl hover:bg-white/10 transition-all active:scale-95" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex flex-col gap-4 text-sm uppercase tracking-widest font-bold">
+                <a href="#overview" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-eye text-blue-400 mr-3"></i>Overview
+                </a>
+                <a href="#problem" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-exclamation-triangle text-amber-400 mr-3"></i>Problem
+                </a>
+                <a href="#evolution" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-chart-line text-purple-400 mr-3"></i>Evolution
+                </a>
+                <a href="#methodology" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-cogs text-green-400 mr-3"></i>Methodology
+                </a>
+                <a href="#results" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-chart-bar text-cyan-400 mr-3"></i>Results
+                </a>
+                <a href="#analysis" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-microscope text-pink-400 mr-3"></i>Analysis
+                </a>
+                <a href="#team" class="mobile-link hover:text-blue-400 transition py-2 px-4 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-users text-indigo-400 mr-3"></i>Team
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-40 sm:pt-48 pb-24 sm:pb-32 space-y-20 sm:space-y-32">
 
@@ -962,5 +975,6 @@
         </div>
     </div>
 
+    <script src="./script.js"></script>
 </body>
 </html>

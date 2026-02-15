@@ -23,14 +23,18 @@ function startTimer() {
 
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
-    modal.style.display = "block";
-    document.body.classList.add("modal-open");
+    if (modal) {
+        modal.style.display = "block";
+        document.body.classList.add("modal-open");
+    }
 }
 
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
-    modal.style.display = "none";
-    document.body.classList.remove("modal-open");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+    }
 }
 
 window.onclick = function(event) {
@@ -40,7 +44,6 @@ window.onclick = function(event) {
     }
 };
 
-
 window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         const openModalEl = document.querySelector(".modal[style*='display: block']");
@@ -48,96 +51,142 @@ window.addEventListener("keydown", (e) => {
             openModalEl.style.display = "none";
             document.body.classList.remove("modal-open");
         }
+        if (document.body.classList.contains("menu-open")) {
+            closeMenu();
+        }
     }
 });
 
-
-const improvementCanvas = document.getElementById('improvementChart');
-if (improvementCanvas) {
-    const improvementCtx = improvementCanvas.getContext('2d');
-
-    new Chart(improvementCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Dataset Size', 'Feature Count', 'Significant Features', 'Accuracy (%)'],
-            datasets: [{
-                label: 'Phase 1',
-                data: [28, 8, 1, 72],
-                backgroundColor: '#475569',
-                borderRadius: 8
-            }, {
-                label: 'Phase 2',
-                data: [600, 37, 22, 95],
-                backgroundColor: '#3b82f6',
-                borderRadius: 8
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: { color: '#cbd5e1', font: { size: 12, weight: 'bold' } }
-                }
+function initChart() {
+    const improvementCanvas = document.getElementById('improvementChart');
+    if (improvementCanvas) {
+        const improvementCtx = improvementCanvas.getContext('2d');
+        new Chart(improvementCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Dataset Size', 'Feature Count', 'Significant Features', 'Accuracy (%)'],
+                datasets: [{
+                    label: 'Phase 1',
+                    data: [28, 8, 1, 72],
+                    backgroundColor: '#475569',
+                    borderRadius: 8
+                }, {
+                    label: 'Phase 2',
+                    data: [600, 37, 22, 95],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 8
+                }]
             },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: { color: '#ffffff05' },
-                    ticks: { color: '#94a3b8' }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#cbd5e1', font: { size: 12, weight: 'bold' } }
+                    }
                 },
-                x: {
-                    grid: { display: false },
-                    ticks: { color: '#94a3b8', font: { size: 11 } }
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#ffffff05' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', font: { size: 11 } }
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 }
 
+function initSmoothScroll() {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            duration: 1.15,
+            smoothWheel: true,
+            smoothTouch: false,
+            wheelMultiplier: 0.9
+        });
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
 
-if (!prefersReducedMotion) {
-    const lenis = new Lenis({
-        duration: 1.15,
-        smoothWheel: true,
-        smoothTouch: false,
-        wheelMultiplier: 0.9
-    });
-
-    function raf(time) {
-        lenis.raf(time);
         requestAnimationFrame(raf);
     }
-
-    requestAnimationFrame(raf);
 }
 
-
-const navToggle = document.getElementById("navToggle");
-const navClose = document.getElementById("navClose");
-const mobileMenu = document.getElementById("mobileMenu");
-
 function openMenu() {
-    mobileMenu.classList.add("open");
-    document.body.classList.add("menu-open");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navToggle = document.getElementById("navToggle");
+    if (mobileMenu) {
+        mobileMenu.classList.add("open");
+        document.body.classList.add("menu-open");
+        if (navToggle) navToggle.setAttribute("aria-expanded", "true");
+        mobileMenu.setAttribute("aria-hidden", "false");
+    }
 }
 
 function closeMenu() {
-    mobileMenu.classList.remove("open");
-    document.body.classList.remove("menu-open");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navToggle = document.getElementById("navToggle");
+    if (mobileMenu) {
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
+    }
 }
 
-if (navToggle && mobileMenu) navToggle.addEventListener("click", openMenu);
-if (navClose && mobileMenu) navClose.addEventListener("click", closeMenu);
+function initMobileMenu() {
+    const navToggle = document.getElementById("navToggle");
+    const navClose = document.getElementById("navClose");
+    const mobileMenu = document.getElementById("mobileMenu");
 
+    if (navToggle) {
+        navToggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openMenu();
+        });
+    }
 
-document.querySelectorAll(".mobile-link").forEach(link => {
-    link.addEventListener("click", closeMenu);
-});
+    if (navClose) {
+        navClose.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMenu();
+        });
+    }
 
+    if (mobileMenu) {
+        mobileMenu.addEventListener("click", (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+    }
 
-mobileMenu?.addEventListener("click", (e) => {
-    if (e.target === mobileMenu) closeMenu();
-});
+    document.querySelectorAll(".mobile-link").forEach(link => {
+        link.addEventListener("click", () => {
+            closeMenu();
+        });
+    });
+}
+
+function init() {
+    startTimer();
+    initChart();
+    initSmoothScroll();
+    initMobileMenu();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
