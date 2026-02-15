@@ -1,0 +1,40 @@
+{
+  "total_samples": 600,
+  "human_samples": 300,
+  "ai_samples": 300,
+  "total_features": 37,
+  "significant_features": 22,
+  "top_5_features": [
+    {
+      "name": "Lex Log Ttr",
+      "p_value": "9.83e-64",
+      "effect_size": "1.76",
+      "category": "Large"
+    },
+    {
+      "name": "Ent Zlib Ratio",
+      "p_value": "3.20e-60",
+      "effect_size": "1.57",
+      "category": "Large"
+    },
+    {
+      "name": "Lex Ttr",
+      "p_value": "3.38e-58",
+      "effect_size": "1.62",
+      "category": "Large"
+    },
+    {
+      "name": "Punct Question Ratio",
+      "p_value": "1.66e-56",
+      "effect_size": "1.39",
+      "category": "Large"
+    },
+    {
+      "name": "Read Flesch Kincaid",
+      "p_value": "1.15e-53",
+      "effect_size": "1.29",
+      "category": "Large"
+    }
+  ],
+  "accuracy_estimate": "95%"
+}
