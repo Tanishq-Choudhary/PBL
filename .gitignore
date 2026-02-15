@@ -8,12 +8,6 @@ env/
 venv/
 *.egg-info/
 
-# Data files (if large)
-*.csv
-datasets_raw/
-datasets_parsed/
-data_augmented/
-
 # IDE
 .vscode/
 .idea/

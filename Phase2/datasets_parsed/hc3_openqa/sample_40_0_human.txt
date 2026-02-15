@@ -1,0 +1,3 @@
+what is an array in programming
+
+In computer science , array programming languages (also known as vector or multidimensional languages) generalize operations on scalars to apply transparently to vectors , matrices , and higher dimensional arrays.Array programming primitives concisely express broad ideas about data manipulation.
