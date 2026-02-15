@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
+:root{
+    --safe-pad: 16px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body { 
     background-color: #020617; 
     color: #f8fafc; 
@@ -17,6 +30,18 @@ body {
     background: linear-gradient(90deg, #60a5fa, #a855f7); 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
+}
+
+.responsive-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    max-width: 100%;
+}
+
+.grid > *{
+    min-width: 0;
 }
 
 #timerContainer { 
@@ -54,6 +79,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
+    padding: 24px 0;
     background-color: rgba(2, 6, 23, 0.95);
 }
 
@@ -63,8 +89,7 @@ body {
     padding: 0;
     border: 2px solid rgba(96, 165, 250, 0.3);
     border-radius: 24px;
-    width: 90%;
-    max-width: 900px;
+    width: min(900px, calc(100% - 32px));
     max-height: 85vh;
     overflow-y: auto;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
@@ -104,10 +129,19 @@ body {
     box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
 }
 
+.table-wrap{
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 0;
+    min-width: 640px; 
 }
 
 th, td {
@@ -138,23 +172,46 @@ th {
 .badge-warning { background: rgba(251, 146, 60, 0.2); color: #fb923c; }
 .badge-info { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
 
+.mobile-menu{
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 90px 16px 16px 16px;
+    z-index: 3000;
+}
+
+.mobile-menu.open{
+    display: flex;
+}
+
+body.menu-open{
+    overflow: hidden;
+}
+
+body.modal-open{
+    overflow: hidden;
+}
+
 @media (max-width: 640px) {
     #timerContainer {
         right: 16px !important;
         bottom: 16px !important;
-        padding: 14px 18px !important;
+        padding: 12px 14px !important;
         border-radius: 18px !important;
-        gap: 12px !important;
+        gap: 10px !important;
     }
 
     #displayTime {
-        font-size: 26px !important;
+        font-size: 24px !important;
     }
 
     .modal-content {
-        width: 94%;
-        margin: 18% auto;
-        max-height: 78vh;
+        margin: 12% auto;
+        max-height: 80vh;
     }
 
     .modal-header {
@@ -163,5 +220,13 @@ th {
 
     .modal-body {
         padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
 }
