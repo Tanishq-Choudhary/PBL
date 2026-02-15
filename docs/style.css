@@ -181,8 +181,9 @@ th {
     align-items: flex-start;
     justify-content: center;
     padding: 90px 16px 16px 16px;
-    z-index: 3000;
+    z-index: 60;
 }
+
 
 .mobile-menu.open{
     display: flex;
